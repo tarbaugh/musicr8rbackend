@@ -1,0 +1,24 @@
+.forms{
+	/*margin: auto;*/
+	/*width: 50%;*/
+	border: 10px solid #3B3D3F;
+	background-color: #D09357;
+	padding: 40px;
+	text-align: center;
+	border-radius: 40%;
+	margin-top: 10%;
+	color:#242728;
+	font-family: "Copperplate";
+	display: table;
+	margin: 0 auto;
+}
+input{
+	background-color: #DFCCA6;
+	border-radius: 10px;
+	margin: auto;
+	text-align: center;
+	margin: 5px;
+}
+body{
+	background-color:#242728;
+}

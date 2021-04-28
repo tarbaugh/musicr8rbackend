@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="application/x-www-form-urlencoded"/>
+<title>MusicAppDB</title>
+{% load static %}
+<link rel="stylesheet" href={% static 'MusicAppDB/styles.css' %}>
+</head>
+
+<body>
+	<div class="forms">
+
+	<h1> Registration </h1>
+	<form method="POST" action="/reg/">
+        {% csrf_token %}
+        {{ reg_form | linebreaks }}
+				{{reg_form.output}}
+        <input type="submit" name="Submit" value="Submit"/>
+    </form>
+
+    <h1> Retrieve Songs </h1>
+    <form method="POST" action="/songret/">
+        {% csrf_token %}
+        {{ ret_form | linebreaks }}
+        <input type="submit" name="submitsong" value="Submit"/>
+	</form>
+
+    <h1> Retrieve Artist Attributes </h1>
+    <form method="POST" action="/artistret/">
+        {% csrf_token %}
+        {{ ret_form | linebreaks }}
+        <input type="submit" name="submitsong" value="Submit"/>
+	</form>
+	<ul>
+    {% for i in ratings %}
+    <li> {{ i.song }} </li>
+    {% endfor %}
+    </div>
+	</ul>
+</body>
+</html>
