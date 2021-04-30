@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,7 @@ SECRET_KEY = 'a^713p@4q2sq0m296$w)8yik)6s*3d3u%)jzkuh$7)5n2*1f%!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -125,11 +126,7 @@ STATIC_URL = 'static/'
 FIXTURE_DIRS = ['fixtures/']
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'https://localhost:3000',
-    'musicr8r.herokuapp.com',
-    'http://musicr8r.herokuapp.com',
-    'https://musicr8r.herokuapp.com',
+    '*',
 ]
 
 django_heroku.settings(locals())
