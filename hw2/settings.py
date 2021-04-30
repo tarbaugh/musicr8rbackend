@@ -127,5 +127,9 @@ FIXTURE_DIRS = ['fixtures/']
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'https://localhost:3000',
-    '.herokuapp.com',
+    'musicr8r.herokuapp.com',
+    'http://musicr8r.herokuapp.com',
+    'https://musicr8r.herokuapp.com',
 ]
+
+django_heroku.settings(locals())
