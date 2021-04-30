@@ -125,8 +125,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 FIXTURE_DIRS = ['fixtures/']
 
-CORS_ALLOWED_ORIGINS = [
-    '*',
-]
+CORS_ORIGIN_ALLOW_ALL = True
 
 django_heroku.settings(locals())
