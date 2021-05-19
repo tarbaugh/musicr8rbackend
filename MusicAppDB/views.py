@@ -56,7 +56,7 @@ def rate(request):
 		try:
 			rating = Ratings.objects.get(username=Users.objects.get(username=username),song=Artists.objects.get(song=songname, artist=ArtistAttributes.objects.get(name=artistname)));
 			if(rating != None):
-				rating.update(rating=rating);
+				rating.rating = rating;
 				rating.save();
 				return HttpResponse("Rating updated!");
 		except Ratings.DoesNotExist:
