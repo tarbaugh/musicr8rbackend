@@ -54,11 +54,11 @@ def rate(request):
 			song.save();
 		#Try and get the rating for that user and that song, return error if it exists
 		try:
-			rating = Ratings.objects.get(username=Users.objects.get(username=username),song=Artists.objects.get(song=songname, artist=ArtistAttributes.objects.get(name = artistname)));
+			rating = Ratings.objects.get(username=Users.objects.get(username=username),song=Artists.objects.get(song=songname, artist=ArtistAttributes.objects.get(name=artistname)));
 			if(rating != None):
-				rating = Ratings(username=Users.objects.get(username=username),song=Artists.objects.get(song=songname),rating=rating);
+				rating.update(rating=rating);
 				rating.save();
-				return HttpResponse("Rating success!");
+				return HttpResponse("Rating updated!");
 		except Ratings.DoesNotExist:
 			rating = Ratings(username=Users.objects.get(username=username),song=Artists.objects.get(song=songname),rating=rating);
 			rating.save();
