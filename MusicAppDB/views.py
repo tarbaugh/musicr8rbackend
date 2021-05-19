@@ -60,8 +60,8 @@ def rate(request):
 				rating_object.save();
 				return HttpResponse("Rating updated!");
 		except Ratings.DoesNotExist:
-			rating = Ratings(username=Users.objects.get(username=username),song=Artists.objects.get(song=songname),rating=rating);
-			rating.save();
+			new_rating = Ratings(username=Users.objects.get(username=username),song=Artists.objects.get(song=songname),rating=rating);
+			new_rating.save();
 			return HttpResponse("Rating success!");
 
 	
